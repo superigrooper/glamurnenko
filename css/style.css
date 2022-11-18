@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'Oranienbaum';
+  src: local('Oranienbaum') 
+    url("../fonts/Oranienbaum/Oranienbaum-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto-Regular') 
+    url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--main-black);
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+:root {
+  --main-black: hsl(0, 0%, 0%);
+  --white:      hsl(100, 100%, 100%);
+  --gold:       hsl(54, 77%, 75%);
+  --grey:       hsl(0, 0%, 32%);
+  --grey-light: hsl(0, 0%, 50%);
+  --red:        hsl(345, 88%, 44%);
+}
+
+/* header */
+
