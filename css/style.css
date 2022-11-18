@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'Oranienbaum';
-  src: local('Oranienbaum') 
-    url("../fonts/Oranienbaum/Oranienbaum-Regular.woff2") format("woff2");
+  src: local('Oranienbaum-Regular'), url("../fonts/Oranienbaum/Oranienbaum-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -9,8 +8,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: local('Roboto-Regular') 
-    url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2");
+  src: local('Roboto-Regular'), url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -73,13 +71,199 @@ select {
 }
 
 :root {
+  /* colors */
   --main-black: hsl(0, 0%, 0%);
   --white:      hsl(100, 100%, 100%);
   --gold:       hsl(54, 77%, 75%);
   --grey:       hsl(0, 0%, 32%);
   --grey-light: hsl(0, 0%, 50%);
   --red:        hsl(345, 88%, 44%);
+
+/* offset */
+  --offset: 30px;
+}
+
+.section-inner-wrap {
+  max-width: 1920px;
 }
 
 /* header */
+.header {
+  position: relative;
+  z-index: 10;
+  font-family: 'Oranienbaum', serif;
+  color: var(--white);
+}
 
+.header--fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-block: calc(var(--offset) / 2);
+  max-width: 1920px;
+}
+
+.header__burger {
+  display: none;
+}
+
+.header__nav {
+  margin-right: auto;
+}
+
+.header__nav-link {
+  font-size: 24px;
+  color: inherit;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
+}
+
+.header__nav-link:hover {
+  color: var(--gold);
+}
+
+.header__socials {
+  margin-right: 100px;
+}
+
+.header__socials-list {
+  display: flex;
+  gap: 5px;
+}
+
+.header__contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__tel {
+  color: inherit;
+}
+/* ---------- */
+
+.main {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* hero */
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Oranienbaum', serif;
+  background-image: url("../img/bg-main.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /*padding-inline: var(--inline-offset);*/
+  max-width: 1920px;
+}
+
+.hero__logo {
+  margin-bottom: var(--offset);
+}
+
+.hero__title {
+  font-size: 24px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.hero__text {
+  font-size: 24px;
+  color: var(--gold);
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+/* new product */
+.new-product {
+  position: relative;
+  padding-bottom: var(--offset);
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.new-product__banner {
+  position: absolute;
+  top: 55px;
+  left: -70px;
+  padding: 5px 30px;
+  width: 300px;
+  color: var(--white);
+  font-weight: 300;
+  text-align: center;
+  background-color: var(--red);
+  transform: rotate(-45deg);
+}
+
+.new-product__container {
+  padding-top: var(--offset);
+  max-width: 1920px;
+}
+
+.new-product__title {
+  margin-bottom: var(--offset);
+  font-family: 'Oranienbaum', serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--main-black);
+  text-align: center;
+}
+
+.new-product__desc {
+  margin-inline: auto;
+  margin-bottom: var(--offset);
+  width: 70%;
+  text-transform: uppercase;
+}
+
+.new-product-img-desc {
+  padding: var(--offset);
+}
+
+/* process */
+.process__title {
+  margin-bottom: var(--offset);
+  margin-inline: auto;
+  width: 50%;
+  font-family: 'Oranienbaum', serif;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.process__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--offset);
+  margin-inline: auto;
+  width: 50%;
+  color: var(--grey-light);
+}
+
+.process__item:last-child .process__text {
+  display: inline-block;
+  margin-bottom: var(--offset);
+}
+
+.process__help {
+  width: 70%;
+  text-align: right;
+}
